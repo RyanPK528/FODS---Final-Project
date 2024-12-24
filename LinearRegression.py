@@ -130,10 +130,11 @@ best_model = random_search.best_estimator_
 y_pred = best_model.predict(X_test)
 r2 = r2_score(y_test, y_pred)
 mse = mean_squared_error(y_test, y_pred)
+rmse = np.sqrt(mse)
 
 best_model_summary = {
     'Best Model R²': r2,
-    'Best Model MSE': mse,
+    'Best Model RMSE': rmse,
     'Best Parameters': random_search.best_params_
 }
 
